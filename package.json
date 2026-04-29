@@ -6,7 +6,11 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "export:web": "npx expo export -p web",
+    "serve:web": "npx expo serve --dist-dir dist",
+    "predeploy": "npm run export:web",
+    "deploy": "gh-pages --nojekyll -d dist -r https://github.com/mook03-ctrl/AI_extractor.git --user \"Mook <mook03-ctrl@users.noreply.github.com>\""
   },
   "dependencies": {
     "expo": "55.0.10-canary-20260327-0789fbc",
@@ -24,6 +28,7 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
+    "gh-pages": "^6.3.0",
     "typescript": "~5.9.2"
   },
   "private": true
